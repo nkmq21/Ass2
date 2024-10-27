@@ -1,4 +1,6 @@
-public class ReaderList<T> {
+import Reader.Reader;
+
+public class LinkedList<T> {
     private Node<T> head;
 
     public static class Node<T> {
@@ -38,7 +40,7 @@ public class ReaderList<T> {
     public T search(String code) {
         Node<T> current = head;
         while (current.next != null) {
-            if (current.data instanceof Reader && ((Reader) current.data).rcode.equalsIgnoreCase(code)) {
+            if (current.data instanceof Reader && ((Reader) current.data).getRcode().equalsIgnoreCase(code)) {
                 return current.data;
             }
             current = current.next;
@@ -49,13 +51,13 @@ public class ReaderList<T> {
     //delete by rcode
     public boolean delete(String code) {
         if (head == null) return false;
-        if (head.data instanceof Reader && ((Reader) head.data).rcode.equalsIgnoreCase(code)) {
+        if (head.data instanceof Reader && ((Reader) head.data).getRcode().equalsIgnoreCase(code)) {
             head = head.next;
             return true;
         } else {
             Node<T> current = head;
             while (current.next != null) {
-                if (current.next.data instanceof Reader && ((Reader) current.next.data).rcode.equalsIgnoreCase(code)) {
+                if (current.next.data instanceof Reader && ((Reader) current.next.data).getRcode().equalsIgnoreCase(code)) {
                     current.next = current.next.next;
                     return true;
                 }

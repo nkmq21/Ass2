@@ -1,3 +1,5 @@
+package Reader;
+
 public class Reader {
     protected String rcode;
     protected String name;
@@ -35,7 +37,7 @@ public class Reader {
 
     @Override
     public String toString() {
-        return "Reader{" +
+        return "Reader.Reader{" +
                 "rcode='" + rcode + '\'' +
                 ", name='" + name + '\'' +
                 ", byear=" + byear +
